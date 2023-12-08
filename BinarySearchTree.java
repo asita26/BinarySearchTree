@@ -27,5 +27,16 @@ public class BinarySearchTree {
          System.out.println("Size of generated BST is: " + BST_size);
          System.out.println("Hence all nodes have been added into the BST.");
       }
-   }
+
+      boolean found = rootNode.searchBST(63);
+      if (found) {
+            System.out.println("Key 63 found in the binary search tree.");
+         }
+      else {
+            System.out.println("Key 63 not found in the binary search tree.");
+         }
+      }
+
 }
+
+

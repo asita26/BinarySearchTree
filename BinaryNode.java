@@ -34,6 +34,22 @@ public class BinaryNode<T extends Comparable<T>> {
         return 1 + size(root.left) + size(root.right);
     }
 
+    //Method for searching for node recursively
+    public boolean searchBST(T target){
+        if (target.equals(this.key)) {
+            return true; // Key found in the current node
+        } else if (target.compareTo(this.key) < 0 && this.left != null) {
+            return this.left.searchBST(target); // Search in the left subtree
+        } else if (target.compareTo(this.key) > 0 && this.right != null) {
+            return this.right.searchBST(target); // Search in the right subtree
+        }
+
+        return false; // Key not found
+    }
+
+
+
+
     //Method for adding a node using comparable
     public static <T extends Comparable<T>> void inOrderTraversal(BinaryNode<T> root) {
         if (root != null) {
